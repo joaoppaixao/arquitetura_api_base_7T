@@ -1,0 +1,23 @@
+{
+  "name": "API Delivery - 7º Termo",
+  "dockerComposeFile": "compose.yaml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [8080, 5432],  
+  "customizations": {
+    "vscode":{
+      "extension": [
+        "vscjava.vscode-java-pack",
+        "vmware.vscode-spring-boot",
+        "vscjava.vscode-spring-boot-dashboard",
+        "mtxr.sqltools",
+        "mtxr.sqltools-driver-pg"
+      ],
+      "settings": {
+        "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+        "java.compile.nullAnalysis.mode": "automatic"
+      }
+    }
+  },
+  "remoteUser": "vscode"
+}
