@@ -1,0 +1,18 @@
+services:
+  app:
+    image: mcr.microsoft.com/devcontainers/java:21
+    volume:
+      - ../:/workspace:cached
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    depends_on:
+      - db
+  db:
+    image: postgres:15-alpine
+    container_name: delivery_db
+    restart: unless-stopped
+    enviroment:
+      POSTGRES_USER: delivery_user
+      POSTGRES_PASSWORD: delivery_pass
+      POSTGRES_DB: delivery_db
+    ports:
+    - "5432:5432
